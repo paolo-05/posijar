@@ -71,7 +71,7 @@ export default function Header({ session }: HeaderProps) {
                 <ul className="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0">
                   <li>
                     <Link
-                      href="/postive-today"
+                      href="/positive-today"
                       className="block md:px-4 transition hover:text-primary"
                     >
                       <span>Today&apos;s Positive Fact</span>
@@ -79,7 +79,7 @@ export default function Header({ session }: HeaderProps) {
                   </li>
                   <li>
                     <Link
-                      href="/postive-today"
+                      href="/positive-today"
                       className="block md:px-4 transition hover:text-primary"
                     >
                       <span>All My Positive facts</span>

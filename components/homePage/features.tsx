@@ -10,16 +10,6 @@ type FeatuersProps = {
 };
 
 export default function Features({ session }: FeatuersProps) {
-  const router = useRouter();
-
-  const handleSignIn = () => {
-    if (!session) {
-      signIn();
-    } else {
-      router.push("/positive-today");
-    }
-  };
-
   return (
     <div id="features">
       <Container>
@@ -68,8 +58,7 @@ export default function Features({ session }: FeatuersProps) {
                 </p>
               </div>
               <Link
-                href="#"
-                onClick={handleSignIn}
+                href="/positive-today"
                 className="flex items-center justify-between group-hover:text-secondary"
               >
                 <span className="text-sm">Get started</span>
@@ -109,8 +98,7 @@ export default function Features({ session }: FeatuersProps) {
                 </p>
               </div>
               <Link
-                href="#"
-                onClick={handleSignIn}
+                href="/positive-today"
                 className="flex items-center justify-between group-hover:text-secondary"
               >
                 <span className="text-sm">Get started</span>
@@ -149,8 +137,7 @@ export default function Features({ session }: FeatuersProps) {
                 </p>
               </div>
               <Link
-                onClick={handleSignIn}
-                href="#"
+                href="/positive-today"
                 className="flex items-center justify-between group-hover:text-secondary"
               >
                 <span className="text-sm">Get started</span>
@@ -190,8 +177,7 @@ export default function Features({ session }: FeatuersProps) {
                 </p>
               </div>
               <Link
-                onClick={handleSignIn}
-                href="#"
+                href="/positive-today"
                 className="flex items-center justify-between group-hover:text-secondary"
               >
                 <span className="text-sm">Get started</span>

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@auth/pg-adapter": "0.2.4",
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.2",
     "axios": "^1.6.3",
     "next": "14.0.4",
     "next-auth": "^4.24.5",

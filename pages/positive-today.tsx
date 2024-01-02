@@ -6,7 +6,7 @@ import Head from "next/head";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
-export default function PositiveToday() {
+export default function Positive_today() {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
