@@ -1,15 +1,8 @@
-import { Session } from "next-auth";
-import { signIn } from "next-auth/react";
+import Container from "@/components/ui/container";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import Container from "../container";
 
-type FeatuersProps = {
-  session: Session | null;
-};
-
-export default function Features({ session }: FeatuersProps) {
+export default function Features() {
   return (
     <div id="features">
       <Container>

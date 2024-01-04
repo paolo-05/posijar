@@ -1,3 +1,4 @@
+import { Fact } from "@/models/factModel";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth/next";
@@ -13,5 +14,20 @@ export default async function handler(
 
   if (!session) {
     return res.status(401).json({ message: "Unauthorized" });
+  }
+  const { factId }: { factId: number | undefined } = req.body;
+
+  if (!factId) {
+    return res.status(401).json({ message: "Missing arguments" });
+  }
+
+  try {
+    await Fact.delete(factId, session.user.id);
+
+    res.status(200).json({ message: "OK" });
+  } catch (e) {
+    console.error(e);
+
+    res.status(500).json({ error: "Error in server." });
   }
 }

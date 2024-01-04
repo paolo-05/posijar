@@ -1,24 +1,7 @@
-import { Session } from "next-auth";
-import { signIn } from "next-auth/react";
+import Container from "@/components/ui/container";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import Container from "../container";
 
-type HeroSectionProps = {
-  session: Session | null;
-};
-
-export default function HeroSection({ session }: HeroSectionProps) {
-  const router = useRouter();
-
-  const handleSignIn = () => {
-    if (!session) {
-      signIn();
-    } else {
-      router.push("/positive-today");
-    }
-  };
-
+export default function HeroSection() {
   return (
     <div className="relative" id="home">
       <div
@@ -43,8 +26,7 @@ export default function HeroSection({ session }: HeroSectionProps) {
             </p>
             <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
               <Link
-                href="#"
-                onClick={handleSignIn}
+                href="/positive-today"
                 className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
               >
                 <span className="relative text-base font-semibold text-white">
@@ -52,7 +34,7 @@ export default function HeroSection({ session }: HeroSectionProps) {
                 </span>
               </Link>
               <Link
-                href="#"
+                href="#features"
                 className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
               >
                 <span className="relative text-base font-semibold text-primary dark:text-white">

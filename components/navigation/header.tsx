@@ -1,8 +1,8 @@
+import DiscordUser from "@/components/navigation/discordUser";
+import Container from "@/components/ui/container";
 import { Session } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
-import Container from "../container";
-import DiscordUser from "./discordUser";
 
 type HeaderProps = {
   session: Session | null;

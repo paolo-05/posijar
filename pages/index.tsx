@@ -20,9 +20,9 @@ export default function Home() {
       <main className={urbanist.className}>
         <Header session={session} />
         <section className="space-y-40 mb-40">
-          <HeroSection session={session} />
-          <Features session={session} />
-          <CallToAction session={session} />
+          <HeroSection />
+          <Features />
+          <CallToAction />
         </section>
       </main>
     </>

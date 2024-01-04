@@ -980,6 +980,6 @@ const config: Config = {
     "active",
     "disabled",
   ],
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
 export default config;

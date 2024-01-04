@@ -1,24 +1,8 @@
-import { Session } from "next-auth";
-import { signIn } from "next-auth/react";
+import Container from "@/components/ui/container";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import Container from "../container";
+import Link from "next/link";
 
-type CallToActionProps = {
-  session: Session | null;
-};
-
-export default function CallToAction({ session }: CallToActionProps) {
-  const router = useRouter();
-
-  const handleSignIn = () => {
-    if (!session) {
-      signIn();
-    } else {
-      router.push("/positive-today");
-    }
-  };
-
+export default function CallToAction() {
   return (
     <div className="relative py-16">
       <div
@@ -81,23 +65,22 @@ export default function CallToAction({ session }: CallToActionProps) {
               positive year.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <a
-                href="#"
-                onClick={handleSignIn}
+              <Link
+                href="/positive-today"
                 className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
               >
                 <span className="relative text-base font-semibold text-white dark:text-dark">
                   Get Started
                 </span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#features"
                 className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
               >
                 <span className="relative text-base font-semibold text-primary dark:text-white">
                   More about
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

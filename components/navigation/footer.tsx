@@ -1,6 +1,6 @@
+import Container from "@/components/ui/container";
 import Link from "next/link";
 import { useState } from "react";
-import Container from "../container";
 
 export default function Footer() {
   const [year] = useState(new Date().getFullYear());

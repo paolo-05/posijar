@@ -1,5 +1,5 @@
-import Container from "@/components/container";
 import Header from "@/components/navigation/header";
+import Container from "@/components/ui/container";
 import { useSession } from "next-auth/react";
 import { Urbanist } from "next/font/google";
 import Head from "next/head";
@@ -105,8 +105,9 @@ export default function Privacy() {
                       href="mailto:paolo.bianchessi@icloud.com"
                       className="transition hover:text-primary"
                     >
-                      Me
+                      Us
                     </Link>
+                    .
                   </li>
                 </ul>
                 <br />

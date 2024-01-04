@@ -1,5 +1,5 @@
 import { Session } from "next-auth";
-import { signIn, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -23,8 +23,7 @@ export default function DiscordUser({ session }: DiscordUserProps) {
     return (
       <div className="mt-12 lg:mt-0">
         <Link
-          href="#"
-          onClick={() => signIn()}
+          href="/positive-today"
           className="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
         >
           <span className="relative text-sm font-semibold text-white">
@@ -56,8 +55,8 @@ export default function DiscordUser({ session }: DiscordUserProps) {
 
         <div
           className={`${
-            isMenuOpen ? "" : "hidden"
-          } absolute z-50 mt-4 w-48 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 dark:bg-gray-800 `}
+            !isMenuOpen && "hidden"
+          } absolute z-50 mt-4 w-56 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 dark:bg-gray-800 `}
         >
           <div className="py-1">
             <Link href="/user/profile">

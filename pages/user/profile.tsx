@@ -1,19 +1,16 @@
-import Container from "@/components/container";
 import Header from "@/components/navigation/header";
+import Container from "@/components/ui/container";
 import Modal from "@/components/ui/modal";
 import axios from "axios";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Urbanist } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
 export default function Page() {
-  const router = useRouter();
-
   const [showAlert, setShowAlert] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -38,11 +35,12 @@ export default function Page() {
 
     setLoading(true);
     await axios
-      .post("/api/user/delete", { session })
-      .then(async () => signOut({ callbackUrl: "/" }))
+      .post("/api/user/delete")
+      .then(() => signOut({ callbackUrl: "/" }))
       .then((err) => console.error(err));
 
     setLoading(false);
+    setShowAlert(false);
   };
 
   return (

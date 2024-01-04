@@ -18,10 +18,11 @@ export default async function handler(
 
   try {
     await User.delete(session.user.id);
-    return res.status(200).json({ message: "User deleted succesfully." });
-  } catch (e) {
-    console.log(e);
 
-    res.status(500).json({ error: e });
+    res.status(200).json({ message: "OK" });
+  } catch (e) {
+    console.error(e);
+
+    res.status(500).json({ error: "Error in server." });
   }
 }

@@ -27,7 +27,55 @@ export default function Document() {
         <meta name="apple-mobile-web-app-title" content="My Posive Year" />
         <meta name="application-name" content="My Posive Year" />
         <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta
+          name="theme-color"
+          content="#fff"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#0f172a"
+          media="(prefers-color-scheme: dark)"
+        />
+        <meta
+          name="description"
+          content="PosiJar is a platform to capture and celebrate daily moments of positivity. Join us to create your digital jar of happiness!"
+        />
+        <meta
+          name="keywords"
+          content="positivity, happiness, gratitude, mindfulness, journaling"
+        />
+        <link rel="canonical" href="https://posijar.vercel.app" />
+        <meta name="robots" content="index, follow" />
+        <meta
+          property="og:title"
+          content="PosiJar - Capture and Celebrate Positivity"
+        />
+        <meta
+          property="og:description"
+          content="PosiJar is a platform to capture and celebrate daily moments of positivity. Join us to create your digital jar of happiness!"
+        />
+        <meta
+          property="og:image"
+          content="https://posijar.vercel.app/logo.svg"
+        />
+        <meta property="og:url" content="https://posijar.vercel.app" />
+        <meta
+          name="twitter:card"
+          content="https://posijar.vercel.app/preview.png"
+        />
+        <meta
+          name="twitter:title"
+          content="PosiJar - Capture and Celebrate Positivity"
+        />
+        <meta
+          name="twitter:description"
+          content="PosiJar is a platform to capture and celebrate daily moments of positivity. Join us to create your digital jar of happiness!"
+        />
+        <meta
+          name="twitter:image"
+          content="https://posijar.vercel.app/preview.png"
+        />
       </Head>
       <body className="bg-white dark:bg-gray-900">
         <Main />

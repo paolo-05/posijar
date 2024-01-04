@@ -1,6 +1,6 @@
 export type FactType = {
-  id: number;
-  user_id: number;
+  id: number | null | undefined;
+  userId: number;
   content: string;
-  created_at: Date;
+  created_at: string;
 };
