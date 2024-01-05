@@ -1,0 +1,10 @@
+DISCORD_CLIENT_ID=123
+DISCORD_CLIENT_SECRET=abc
+NEXTAUTH_URL=http://localhost:3000/
+NEXTAUTH_SECRET=defg
+
+# Check out Neon! https://neon.tech/
+PGHOST='pghost'
+PGDATABASE='dbname'
+PGUSER='pguser'
+PGPASSWORD='pgpassword'
