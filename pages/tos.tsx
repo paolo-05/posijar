@@ -18,10 +18,10 @@ export default function Tos() {
         <Header session={session} />
         <section className="space-y-40 mb-40">
           <Container>
-            <div className="relative pt-36 ml-auto">
+            <div className="relative pt-36 max-w-2xl mx-auto">
               <div className="lg:w-2/3 text-center mx-auto">
                 <h1 className="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
-                  PosiJar Terms of Use
+                  Terms of Use
                 </h1>
               </div>
               <div className="mt-8 text-gray-700 dark:text-gray-300">
@@ -91,13 +91,14 @@ export default function Tos() {
                     <span className="text-primary dark:text-white font-bold">
                       Contact:
                     </span>{" "}
-                    - For questions about these terms, please contact{" "}
+                    - For questions about these terms, please{" "}
                     <Link
                       href="mailto:paolo.bianchessi@icloud.com"
                       className="transition hover:text-primary"
                     >
-                      Me
+                      contact us
                     </Link>
+                    .
                   </li>
                 </ol>
                 <br />

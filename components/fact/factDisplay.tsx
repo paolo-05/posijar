@@ -1,4 +1,5 @@
 import { FactType } from "@/types/factType";
+import Link from "next/link";
 import { useState } from "react";
 
 type FactDisplayProps = {
@@ -51,9 +52,17 @@ export default function FactDisplay({
           </div>
         </div>
       </div>
-
       <p className="text-center text-md text-gray-600 dark:text-gray-300">
-        Come back tomorrow for the next one!
+        Great, you did it! Come back tomorrow for the next one.
+        <br />
+        Or,
+        <br />
+        <Link
+          href="/all-facts"
+          className="block md:px-4 transition hover:text-primary"
+        >
+          See all your facts so far.
+        </Link>
       </p>
     </>
   );

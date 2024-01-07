@@ -1,4 +1,4 @@
- <img src="https://skillicons.dev/icons?i=nextjs,react,discord,ts,tailwind,vercel,postgres" />
+<img src="https://skillicons.dev/icons?i=nextjs,react,discord,ts,tailwind,vercel,postgres" />
 
 # ❓What is `PosiJar`
 

@@ -18,3 +18,28 @@ body {
 #toggle_nav:checked ~ div #hamburger #line2 {
   @apply -rotate-45 -translate-y-1;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  border: 1px solid #e9e9ec;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background-color: #0f172a;
+    border: 1px solid #293041;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9333ea;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9333ea;
+}
