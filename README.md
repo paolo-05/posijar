@@ -1,8 +1,8 @@
- <img src="https://skillicons.dev/icons?i=nextjs,react,discord,ts,tailwind,vercel,postgres" />
+<img src="https://skillicons.dev/icons?i=nextjs,react,discord,ts,tailwind,vercel,postgres" />
 
- # ❓What is `PosiJar`
+# ❓What is `PosiJar`
 
- > It's a project made in [`NextJs`](https://nextjs.org/) allowing people to have a more positive view about their life.
+> It's a project made in [`NextJs`](https://nextjs.org/) allowing people to have a more positive view about their life.
 
 # 🔥 Features
 
@@ -21,8 +21,7 @@ Anyway, to get started:
 - Then you'll need to go in the `OAuth2` Section for coping the `Client ID` and also the `Client Secret`
 - Insert a callback url in the **Redirects** section e.g. `http://localhost:3000/api/auth/callback/discord`
 
-
-```
+```bash
 git clone https://github.com/paolo-05/posijar
 cd posijar
 cp env-copy .env.local

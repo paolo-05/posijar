@@ -79,7 +79,7 @@ export default function Header({ session }: HeaderProps) {
                   </li>
                   <li>
                     <Link
-                      href="/positive-today"
+                      href="/all-facts"
                       className="block md:px-4 transition hover:text-primary"
                     >
                       <span>All My Positive facts</span>

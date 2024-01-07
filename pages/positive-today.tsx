@@ -1,7 +1,7 @@
+import FactDisplay from "@/components/fact/factDisplay";
+import FactInput from "@/components/fact/factInput";
 import Header from "@/components/navigation/header";
 import Container from "@/components/ui/container";
-import FactDisplay from "@/components/ui/factDisplay";
-import FactInput from "@/components/ui/factInput";
 import Modal from "@/components/ui/modal";
 import axios from "axios";
 import { format } from "date-fns";

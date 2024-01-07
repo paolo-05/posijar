@@ -19,10 +19,7 @@ export default function Footer() {
                 </li>
 
                 <li>
-                  <Link
-                    href="/#features"
-                    className="transition hover:text-primary"
-                  >
+                  <Link href="/about" className="transition hover:text-primary">
                     About
                   </Link>
                 </li>

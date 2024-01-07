@@ -1,5 +1,5 @@
-import { FactType } from "@/types/factType";
 import { pool } from "@/models/db";
+import { FactType } from "@/types/factType";
 
 export const Fact = {
   create: async (userId: number, content: string): Promise<void> => {
