@@ -1,6 +1,8 @@
 import PostgresAdapter from "@auth/pg-adapter";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
+import GoogleProvider from "next-auth/providers/google";
+
 import { Pool } from "pg";
 
 const pool = new Pool({
@@ -16,8 +18,16 @@ const pool = new Pool({
 });
 
 export const authOptions: NextAuthOptions = {
+  pages: {
+    signOut: "/auth/signout",
+  },
   adapter: PostgresAdapter(pool),
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID ?? "",
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
+      allowDangerousEmailAccountLinking: true,
+    }),
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID ?? "",
       clientSecret: process.env.DISCORD_CLIENT_SECRET ?? "",

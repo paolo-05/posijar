@@ -39,6 +39,7 @@ export default function Positive_today() {
     setLoading(true);
     if (fact.id === 0) {
       await axios.post("/api/fact/create", { fact: fact });
+      fact.id = -1;
     } else {
       await axios.post("/api/fact/edit", { fact: fact });
       setEditFact(false);
@@ -77,6 +78,8 @@ export default function Positive_today() {
   };
 
   useEffect(() => {
+    console.log(fact.id);
+
     axios
       .post("/api/fact/get-today", { day: getTodayDate() })
       .then((resp) => {

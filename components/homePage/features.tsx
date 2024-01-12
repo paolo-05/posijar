@@ -85,9 +85,9 @@ export default function Features() {
                   No need to remember another passowrd
                 </h5>
                 <p className="text-gray-600 dark:text-gray-300">
-                  With our Discord authentication, it&apos;s easy to get
-                  started. Connect your Discord account, and begin your journey
-                  to a more positive and mindful year.
+                  With our Discord or Google authentication, it&apos;s easy to
+                  get started. Connect your account, and begin your journey to a
+                  more positive and mindful year.
                 </p>
               </div>
               <Link
@@ -150,7 +150,7 @@ export default function Features() {
             </div>
           </div>
           <div className="group relative bg-gray-50 dark:bg-gray-900 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-            <div className="relative space-y-8 py-12 p-8 transition duration-300 group-hover:bg-white dark:group-hover:bg-gray-800">
+            <div className="relative space-y-14 py-12 p-8 transition duration-300 group-hover:bg-white dark:group-hover:bg-gray-800">
               <Image
                 src="https://cdn-icons-png.flaticon.com/512/6976/6976288.png"
                 className="w-12"
