@@ -78,8 +78,6 @@ export default function Positive_today() {
   };
 
   useEffect(() => {
-    console.log(fact.id);
-
     axios
       .post("/api/fact/get-today", { day: getTodayDate() })
       .then((resp) => {
