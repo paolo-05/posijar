@@ -19,6 +19,7 @@ const pool = new Pool({
 
 export const authOptions: NextAuthOptions = {
   pages: {
+    signIn: "/auth/signin",
     signOut: "/auth/signout",
   },
   adapter: PostgresAdapter(pool),
