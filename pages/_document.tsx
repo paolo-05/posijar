@@ -46,7 +46,6 @@ export default function Document() {
           content="positivity, happiness, gratitude, mindfulness, journaling"
         />
         <link rel="canonical" href="https://posijar.vercel.app" />
-        <meta name="robots" content="index, follow" />
         <meta
           property="og:title"
           content="PosiJar - Capture and Celebrate Positivity"
