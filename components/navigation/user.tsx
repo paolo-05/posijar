@@ -2,20 +2,33 @@ import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type DiscordUserProps = {
   session: Session | null;
 };
 
-export default function DiscordUser({ session }: DiscordUserProps) {
+export default function User({ session }: DiscordUserProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleCloseDropdown = () => {
+      if (isMenuOpen) setIsMenuOpen(false);
+    };
+
+    document.addEventListener("click", handleCloseDropdown);
+
+    return () => {
+      document.removeEventListener("click", handleCloseDropdown);
+    };
+  }, [isMenuOpen]);
 
   const handleLogout = () => {
     signOut({ callbackUrl: "/" });
   };
 
-  const toggleDropdown = () => {
+  const toggleDropdown = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -44,7 +57,9 @@ export default function DiscordUser({ session }: DiscordUserProps) {
           >
             <Image
               className="h-8 w-8 rounded-full object-cover inline"
-              src={user?.image || "/default-avatar.jpg"}
+              src={
+                user?.image || "https://cdn.discordapp.com/embed/avatars/0.png"
+              }
               alt={user?.name || "user avatar"}
               height={256}
               width={256}
@@ -56,7 +71,7 @@ export default function DiscordUser({ session }: DiscordUserProps) {
         <div
           className={`${
             !isMenuOpen && "hidden"
-          } absolute z-50 mt-4 w-56 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 dark:bg-gray-800 `}
+          } absolute z-50 mt-4 w-56 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 dark:bg-gray-800`}
         >
           <div className="py-1">
             <Link href="/user/profile">

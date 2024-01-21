@@ -1,4 +1,4 @@
-import DiscordUser from "@/components/navigation/discordUser";
+import User from "@/components/navigation/user";
 import Container from "@/components/ui/container";
 import { Session } from "next-auth";
 import Image from "next/image";
@@ -82,7 +82,7 @@ export default function Header({ session }: HeaderProps) {
                       href="/all-facts"
                       className="block md:px-4 transition hover:text-primary"
                     >
-                      <span>All My Positive facts</span>
+                      <span>My PosiJar</span>
                     </Link>
                   </li>
                   <li>
@@ -96,7 +96,7 @@ export default function Header({ session }: HeaderProps) {
                   </li>
                 </ul>
               </div>
-              <DiscordUser session={session} />
+              <User session={session} />
             </div>
           </div>
         </Container>

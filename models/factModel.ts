@@ -54,10 +54,22 @@ export const Fact = {
   getAll: async (userId: number): Promise<FactType[] | undefined> => {
     const db = await pool.connect();
     try {
-      const rows = await db.query("SELECT * FROM facts WHERE userId = $1", [
+      const result = await db.query("SELECT * FROM facts WHERE userId = $1", [
         userId,
       ]);
-      return rows as any | FactType[] | undefined;
+      return result.rows[0] as any | FactType[] | undefined;
+    } finally {
+      db.release();
+    }
+  },
+  getCount: async (userId: number): Promise<number | undefined> => {
+    const db = await pool.connect();
+    try {
+      const result = await db.query(
+        "SELECT COUNT(*) FROM facts WHERE userId = $1",
+        [userId]
+      );
+      return result.rows[0].count as any | number | undefined;
     } finally {
       db.release();
     }

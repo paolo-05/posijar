@@ -72,7 +72,7 @@ export default function FactDisplay({
           href="/all-facts"
           className="block md:px-4 transition hover:text-primary"
         >
-          See all your facts so far.
+          See your Jar status
         </Link>
       </p>
     </>
