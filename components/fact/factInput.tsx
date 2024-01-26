@@ -5,12 +5,14 @@ type FactInputProps = {
   fact: FactType;
   updateContent: Function;
   handleSubmit: MouseEventHandler<HTMLButtonElement>;
+  loading: boolean;
 };
 
 export default function FactInput({
   fact,
   updateContent,
   handleSubmit,
+  loading,
 }: FactInputProps) {
   return (
     <>
@@ -35,8 +37,8 @@ export default function FactInput({
       <div className="flex flex-wrap justify-center gap-6">
         <button
           onClick={handleSubmit}
-          disabled={!fact.content}
-          className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-primary disabled:before:bg-primary/75 disabled:transition-none disabled:before:rounded-full disabled:before:scale-100 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+          disabled={!fact.content || loading}
+          className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-primary disabled:before:bg-primary/75 disabled:cursor-not-allowed disabled:transition-none disabled:before:rounded-full disabled:before:scale-100 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
         >
           <span className="relative text-base font-semibold text-white dark:text-dark">
             Save!

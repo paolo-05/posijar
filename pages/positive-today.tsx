@@ -123,6 +123,7 @@ export default function Positive_today() {
                     fact={fact}
                     updateContent={handelFactUpdate}
                     handleSubmit={handleFactSubmit}
+                    loading={loading}
                   />
                 ) : (
                   <FactDisplay
