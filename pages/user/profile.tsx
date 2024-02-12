@@ -1,6 +1,7 @@
 import Header from "@/components/navigation/header";
 import Container from "@/components/ui/container";
 import Modal from "@/components/ui/modal";
+import { useSecureSession } from "@/hooks/useSecuredSession";
 import axios from "axios";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Urbanist } from "next/font/google";
@@ -11,15 +12,9 @@ import { useState } from "react";
 const urbanist = Urbanist({ subsets: ["latin"] });
 
 export default function Page() {
+  const { session } = useSecureSession();
   const [showAlert, setShowAlert] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      signIn();
-    },
-  });
 
   const handleShowModal = () => {
     // Display alert or confirmation modal

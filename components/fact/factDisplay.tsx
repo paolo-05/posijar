@@ -1,6 +1,6 @@
+import { useDropdown } from "@/hooks/useDropdown";
 import { FactType } from "@/types/factType";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 type FactDisplayProps = {
   fact: FactType;
@@ -13,22 +13,7 @@ export default function FactDisplay({
   setEditFact,
   setDeleteFact,
 }: FactDisplayProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (e: any) => {
-      if (e.keyCode === 27) {
-        setIsMenuOpen(false);
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  const { isMenuOpen, toggleDropdown, setIsMenuOpen } = useDropdown();
 
   return (
     <>

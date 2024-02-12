@@ -1,36 +1,16 @@
+import { useDropdown } from "@/hooks/useDropdown";
+import { useSignOut } from "@/hooks/useSignOut";
 import { Session } from "next-auth";
-import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-type DiscordUserProps = {
+type UserProps = {
   session: Session | null;
 };
 
-export default function User({ session }: DiscordUserProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleCloseDropdown = () => {
-      if (isMenuOpen) setIsMenuOpen(false);
-    };
-
-    document.addEventListener("click", handleCloseDropdown);
-
-    return () => {
-      document.removeEventListener("click", handleCloseDropdown);
-    };
-  }, [isMenuOpen]);
-
-  const handleLogout = () => {
-    signOut({ callbackUrl: "/" });
-  };
-
-  const toggleDropdown = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.stopPropagation();
-    setIsMenuOpen(!isMenuOpen);
-  };
+export default function User({ session }: UserProps) {
+  const { isMenuOpen, toggleDropdown } = useDropdown();
+  const { handleLogout } = useSignOut();
 
   if (!session) {
     return (

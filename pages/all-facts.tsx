@@ -1,29 +1,16 @@
 import MyPosiJar from "@/components/jar";
 import Header from "@/components/navigation/header";
-import axios from "axios";
-import { signIn, useSession } from "next-auth/react";
+import { useCountAllFacts } from "@/hooks/useCountAllFacts";
+import { useSecureSession } from "@/hooks/useSecuredSession";
 import { Urbanist } from "next/font/google";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
 export default function AllFacts() {
-  const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      signIn();
-    },
-  });
+  const { session } = useSecureSession();
 
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    axios
-      .post("/api/fact/get-count")
-      .then((res) => setCount(res.data.count))
-      .catch((e) => console.error(e));
-  }, []);
+  const { count } = useCountAllFacts();
 
   return (
     <>
