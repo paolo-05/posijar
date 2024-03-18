@@ -1,4 +1,4 @@
-import { pool } from '@/models/db';
+import { pool } from '@/models/db.connection';
 import { FactType } from '@/types/factType';
 
 export const Fact = {

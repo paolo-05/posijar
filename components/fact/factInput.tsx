@@ -8,7 +8,7 @@ type FactInputProps = {
 	loading: boolean;
 };
 
-export default function FactInput({ fact, updateContent, handleSubmit, loading }: FactInputProps) {
+export const FactInput = ({ fact, updateContent, handleSubmit, loading }: FactInputProps) => {
 	return (
 		<>
 			<p className='text-center text-xl text-gray-600 dark:text-gray-300'>
@@ -39,4 +39,4 @@ export default function FactInput({ fact, updateContent, handleSubmit, loading }
 			</div>
 		</>
 	);
-}
+};

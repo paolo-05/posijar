@@ -8,3 +8,4 @@ coverage
 **/.svn
 **/.hg
 **/node_modules
+build.css

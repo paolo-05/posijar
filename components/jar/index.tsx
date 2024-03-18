@@ -1,5 +1,5 @@
 import { Jar } from '@/components/jar/jar';
-import Container from '@/components/ui/container';
+import { Container } from '@/components/ui';
 import Link from 'next/link';
 
 type MyPosiJarProps = {

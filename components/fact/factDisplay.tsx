@@ -1,4 +1,4 @@
-import { useDropdown } from '@/hooks/useDropdown';
+import { useDropdown } from '@/hooks';
 import { FactType } from '@/types/factType';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ type FactDisplayProps = {
 	setDeleteFact: Function;
 };
 
-export default function FactDisplay({ fact, setEditFact, setDeleteFact }: FactDisplayProps) {
+export const FactDisplay = ({ fact, setEditFact, setDeleteFact }: FactDisplayProps) => {
 	const { isMenuOpen, toggleDropdown, setIsMenuOpen } = useDropdown();
 
 	return (
@@ -55,4 +55,4 @@ export default function FactDisplay({ fact, setEditFact, setDeleteFact }: FactDi
 			</p>
 		</>
 	);
-}
+};

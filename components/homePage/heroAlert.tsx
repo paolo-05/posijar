@@ -12,7 +12,7 @@ export const HeroAlert = ({ content }: HeroAlertProps) => {
 			role='alert'
 		>
 			<span className='text-xs bg-primary rounded-full text-white px-4 py-1.5 mr-3'>New</span>{' '}
-			<span className='text-sm font-medium'>{content} Check it out.</span>
+			<span className='text-sm font-medium'>{content}</span>
 			<svg className='ml-2 w-5 h-5' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
 				<path
 					fillRule='evenodd'

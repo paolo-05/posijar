@@ -1,8 +1,8 @@
-import Container from '@/components/ui/container';
+import { Container } from '@/components/ui';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function Footer() {
+export const Footer = () => {
 	const [year] = useState(new Date().getFullYear());
 
 	return (
@@ -102,4 +102,4 @@ export default function Footer() {
 			</Container>
 		</footer>
 	);
-}
+};

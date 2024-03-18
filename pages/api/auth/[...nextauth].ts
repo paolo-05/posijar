@@ -1,21 +1,8 @@
+import { pool } from '@/models';
 import PostgresAdapter from '@auth/pg-adapter';
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import DiscordProvider from 'next-auth/providers/discord';
 import GoogleProvider from 'next-auth/providers/google';
-
-import { Pool } from 'pg';
-
-const pool = new Pool({
-	host: process.env.PGHOST,
-	database: process.env.PGDATABASE,
-	user: process.env.PGUSER,
-	password: process.env.PGPASSWORD,
-	port: 5432,
-	ssl: true,
-	max: 20,
-	idleTimeoutMillis: 30000,
-	connectionTimeoutMillis: 2000,
-});
 
 export const authOptions: NextAuthOptions = {
 	pages: {

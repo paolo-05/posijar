@@ -1,7 +1,7 @@
-import Container from '@/components/ui/container';
 import Link from 'next/link';
+import { Container } from '.';
 
-export default function ComingSoon() {
+export const ComingSoon = () => {
 	return (
 		<>
 			<div className='relative'>
@@ -39,4 +39,4 @@ export default function ComingSoon() {
 			</div>
 		</>
 	);
-}
+};

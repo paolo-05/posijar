@@ -1,5 +1,4 @@
-import { useDropdown } from '@/hooks/useDropdown';
-import { useSignOut } from '@/hooks/useSignOut';
+import { useDropdown, useSignOut } from '@/hooks';
 import { Session } from 'next-auth';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,7 +7,7 @@ type UserProps = {
 	session: Session | null;
 };
 
-export default function User({ session }: UserProps) {
+export const User = ({ session }: UserProps) => {
 	const { isMenuOpen, toggleDropdown } = useDropdown();
 	const { handleLogout } = useSignOut();
 
@@ -65,4 +64,4 @@ export default function User({ session }: UserProps) {
 			</div>
 		);
 	}
-}
+};

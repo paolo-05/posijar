@@ -1,4 +1,4 @@
-import { Fact } from '@/models/factModel';
+import { Fact } from '@/models';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth/next';

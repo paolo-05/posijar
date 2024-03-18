@@ -1,4 +1,4 @@
-import { pool } from '@/models/db';
+import { pool } from '@/models/db.connection';
 
 export const User = {
 	delete: async (id: number): Promise<void> => {

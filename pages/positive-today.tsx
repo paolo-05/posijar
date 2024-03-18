@@ -1,10 +1,8 @@
-import FactDisplay from '@/components/fact/factDisplay';
-import FactInput from '@/components/fact/factInput';
-import Header from '@/components/navigation/header';
-import Container from '@/components/ui/container';
-import Modal from '@/components/ui/modal';
-import { usePosiFact } from '@/hooks/usePosiFact';
-import { useSecureSession } from '@/hooks/useSecuredSession';
+import { FactDisplay, FactInput } from '@/components/fact';
+import { Header } from '@/components/navigation';
+import { Container } from '@/components/ui';
+import { Modal } from '@/components/ui/';
+import { usePosiFact, useSecureSession } from '@/hooks';
 import { Urbanist } from 'next/font/google';
 import Head from 'next/head';
 

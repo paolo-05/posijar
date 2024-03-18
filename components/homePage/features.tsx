@@ -1,8 +1,8 @@
-import Container from '@/components/ui/container';
+import { Container } from '@/components/ui';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Features() {
+export const Features = () => {
 	return (
 		<div id='features'>
 			<Container>
@@ -176,4 +176,4 @@ export default function Features() {
 			</Container>
 		</div>
 	);
-}
+};
