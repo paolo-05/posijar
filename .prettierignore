@@ -1,0 +1,10 @@
+
+*-lock.*
+build
+coverage
+.next
+.vercel
+**/.git
+**/.svn
+**/.hg
+**/node_modules

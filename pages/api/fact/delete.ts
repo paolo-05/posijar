@@ -1,33 +1,30 @@
-import { Fact } from "@/models/factModel";
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
-import { NextApiRequest, NextApiResponse } from "next";
-import { getServerSession } from "next-auth/next";
+import { Fact } from '@/models/factModel';
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { getServerSession } from 'next-auth/next';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== "POST") {
-    return res.status(405);
-  }
-  const session = await getServerSession(req, res, authOptions);
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+	if (req.method !== 'POST') {
+		return res.status(405);
+	}
+	const session = await getServerSession(req, res, authOptions);
 
-  if (!session) {
-    return res.status(401).json({ message: "Unauthorized" });
-  }
-  const { factId }: { factId: number | undefined } = req.body;
+	if (!session) {
+		return res.status(401).json({ message: 'Unauthorized' });
+	}
+	const { factId }: { factId: number | undefined } = req.body;
 
-  if (!factId) {
-    return res.status(401).json({ message: "Missing arguments" });
-  }
+	if (!factId) {
+		return res.status(401).json({ message: 'Missing arguments' });
+	}
 
-  try {
-    await Fact.delete(factId, session.user.id);
+	try {
+		await Fact.delete(factId, session.user.id);
 
-    res.status(200).json({ message: "OK" });
-  } catch (e) {
-    console.error(e);
+		res.status(200).json({ message: 'OK' });
+	} catch (e) {
+		console.error(e);
 
-    res.status(500).json({ error: "Error in server." });
-  }
+		res.status(500).json({ error: 'Error in server.' });
+	}
 }
