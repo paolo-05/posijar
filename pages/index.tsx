@@ -1,7 +1,5 @@
-import CallToAction from '@/components/homePage/callToAction';
-import Features from '@/components/homePage/features';
-import HeroSection from '@/components/homePage/heroSection';
-import Header from '@/components/navigation/header';
+import { CallToAction, Features, HeroSection } from '@/components/homePage';
+import { Header } from '@/components/navigation';
 import { useSession } from 'next-auth/react';
 import { Urbanist } from 'next/font/google';
 import Head from 'next/head';

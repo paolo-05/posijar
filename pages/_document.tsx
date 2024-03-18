@@ -1,4 +1,4 @@
-import Footer from '@/components/navigation/footer';
+import { Footer } from '@/components/navigation';
 import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {

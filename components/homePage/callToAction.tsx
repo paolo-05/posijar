@@ -1,8 +1,8 @@
-import Container from '@/components/ui/container';
+import { Container } from '@/components/ui';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function CallToAction() {
+export const CallToAction = () => {
 	return (
 		<div className='relative py-16'>
 			<div
@@ -82,4 +82,4 @@ export default function CallToAction() {
 			</Container>
 		</div>
 	);
-}
+};

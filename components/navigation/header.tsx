@@ -1,14 +1,14 @@
-import User from '@/components/navigation/user';
-import Container from '@/components/ui/container';
+import { Container } from '@/components/ui';
 import { Session } from 'next-auth';
 import Image from 'next/image';
 import Link from 'next/link';
+import { User } from '.';
 
 type HeaderProps = {
 	session: Session | null;
 };
 
-export default function Header({ session }: HeaderProps) {
+export const Header = ({ session }: HeaderProps) => {
 	return (
 		<header>
 			<nav className='z-10 w-full absolute'>
@@ -79,4 +79,4 @@ export default function Header({ session }: HeaderProps) {
 			</nav>
 		</header>
 	);
-}
+};

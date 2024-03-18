@@ -1,9 +1,8 @@
-import Header from '@/components/navigation/header';
-import Container from '@/components/ui/container';
-import Modal from '@/components/ui/modal';
-import { useSecureSession } from '@/hooks/useSecuredSession';
+import { Header } from '@/components/navigation';
+import { Container, Modal } from '@/components/ui';
+import { useSecureSession } from '@/hooks';
 import axios from 'axios';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 import { Urbanist } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';

@@ -1,7 +1,6 @@
 import MyPosiJar from '@/components/jar';
-import Header from '@/components/navigation/header';
-import { useCountAllFacts } from '@/hooks/useCountAllFacts';
-import { useSecureSession } from '@/hooks/useSecuredSession';
+import { Header } from '@/components/navigation/header';
+import { useCountAllFacts, useSecureSession } from '@/hooks';
 import { Urbanist } from 'next/font/google';
 import Head from 'next/head';
 

@@ -1,8 +1,8 @@
-import Container from '@/components/ui/container';
+import { Container } from '@/components/ui';
 import Link from 'next/link';
-import { HeroAlert } from './heroAlert';
+import { HeroAlert } from '.';
 
-export default function HeroSection() {
+export const HeroSection = () => {
 	return (
 		<div className='relative'>
 			<div aria-hidden='true' className='absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20'>
@@ -12,7 +12,7 @@ export default function HeroSection() {
 			<Container>
 				<div className='relative pt-36 ml-auto'>
 					<div className='lg:w-2/3 text-center mx-auto'>
-						<HeroAlert content='Now you can see your PosiJar!' />
+						<HeroAlert content='📣 Soon there will be new features!!' />
 						<h1 className='text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl'>
 							This year, each day write down a <span className='text-primary dark:text-white'>positive</span> fact.
 						</h1>
@@ -53,4 +53,4 @@ export default function HeroSection() {
 			</Container>
 		</div>
 	);
-}
+};

@@ -15,7 +15,6 @@ export const pool = new Pool({
 	connectionTimeoutMillis: 2000,
 });
 
-// Export a function to gracefully shut down the pool (optional)
 export const closePool = async (): Promise<void> => {
 	await pool.end();
 };

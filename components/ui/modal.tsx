@@ -7,7 +7,7 @@ type ModalProps = {
 	action: Function;
 };
 
-export default function Modal({ id, content, discardText, confirmText, confirmDisabled, action }: ModalProps) {
+export const Modal = ({ id, content, discardText, confirmText, confirmDisabled, action }: ModalProps) => {
 	const handleModal = (value: boolean) => {
 		action(value);
 	};
@@ -35,4 +35,4 @@ export default function Modal({ id, content, discardText, confirmText, confirmDi
 			</div>
 		</div>
 	);
-}
+};
