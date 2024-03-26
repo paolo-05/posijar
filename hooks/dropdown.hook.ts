@@ -3,20 +3,22 @@ import { useEffect, useState } from 'react';
 export const useDropdown = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	const toggleDropdown = () => {
+	const toggleDropdown = (event: React.MouseEvent<HTMLButtonElement>): void => {
+		event.stopPropagation();
 		setIsMenuOpen(!isMenuOpen);
 	};
 
 	useEffect(() => {
-		const handleKeyDown = (e: any) => {
-			if (e.keyCode === 27) {
+		const handleCloseDropdown = (): void => {
+			if (isMenuOpen) {
 				setIsMenuOpen(false);
 			}
 		};
-		document.addEventListener('keydown', handleKeyDown);
 
-		return () => document.removeEventListener('keydown', handleKeyDown);
-	}, []);
+		document.addEventListener('click', handleCloseDropdown);
+
+		return () => document.removeEventListener('click', handleCloseDropdown);
+	}, [isMenuOpen]);
 
 	return { isMenuOpen, toggleDropdown, setIsMenuOpen };
 };

@@ -24,9 +24,6 @@ export default function MyPosiJar({ count }: MyPosiJarProps) {
 					</p>
 					<div className='mb-4 text-md text-gray-900 dark:text-gray-100'>
 						<p>Total Facts: {count}</p>
-						<p>
-							Current Streak: <span>Soon!</span>
-						</p>
 					</div>
 					<Link
 						href='/positive-today'

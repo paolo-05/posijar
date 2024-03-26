@@ -5,6 +5,7 @@ import { Modal } from '@/components/ui/';
 import { usePosiFact, useSecureSession } from '@/hooks';
 import { Urbanist } from 'next/font/google';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
@@ -40,6 +41,7 @@ export default function PositiveToday() {
 					</div>
 					<Container>
 						<div className='relative flex flex-col items-center'>
+							<Image src={'/logo.svg'} alt='logo' width={512} height={512} className='w-32' />
 							<div className='mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12'>
 								<h1 className='text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl'>
 									{fact.id !== 0 ? 'Your ' : 'Insert your '}

@@ -7,6 +7,7 @@ import { Urbanist } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
@@ -31,7 +32,7 @@ export default function Page() {
 		await axios
 			.post('/api/user/delete')
 			.then(() => signOut({ callbackUrl: '/' }))
-			.then((err) => console.error(err));
+			.then((err) => toast.error("Network error, couldn't delete your account. Please try again later."));
 
 		setLoading(false);
 		setShowAlert(false);
