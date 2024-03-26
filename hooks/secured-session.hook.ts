@@ -1,4 +1,5 @@
 import { signIn, useSession } from 'next-auth/react';
+import { toast } from 'react-toastify';
 
 /**
  * This hook replaces the default `useSesion` hook from next-auth.

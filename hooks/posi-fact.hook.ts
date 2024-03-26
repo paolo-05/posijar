@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { format } from 'date-fns';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const getTodayDate = (): string => format(new Date(), 'yyyy-MM-dd');
 
@@ -24,9 +25,11 @@ export const usePosiFact = () => {
 		if (fact.id === 0) {
 			await axios.post('/api/fact/create', { fact: fact });
 			fact.id = -1;
+			toast.success('Fact created successfully!');
 		} else {
 			await axios.post('/api/fact/edit', { fact: fact });
 			setEditFact(false);
+			toast.info('Fact updated!');
 		}
 		setLoading(false);
 	};
@@ -59,6 +62,7 @@ export const usePosiFact = () => {
 
 		setLoading(false);
 		setShowAlert(false);
+		toast.info('Fact deleted!');
 	};
 
 	useEffect(() => {
