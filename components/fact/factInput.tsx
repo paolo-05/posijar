@@ -19,7 +19,7 @@ export const FactInput = ({ fact, updateContent, handleSubmit, loading }: FactIn
 				<textarea
 					name='content'
 					id='factContent'
-					className='form-textarea dark:bg-gray-900 block h-full w-full rounded-md border-0 py-1.5 px-7 text-gray-900 dark:text-gray-100 ring-1 ring-inset ring-gray-300 dark:ring-gray-600 placeholder:text-gray-400 dark:placeholder:text-gray-200 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-indigo-300 md:text-base md:leading-6 sm:text-sm sm:leading-6'
+					className='form-textarea dark:bg-gray-800 block h-full w-full rounded-md border-0 py-1.5 px-7 text-gray-900 dark:text-gray-100 ring-1 ring-inset ring-gray-300 dark:ring-gray-600 placeholder:text-gray-400 dark:placeholder:text-gray-200 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:focus:ring-indigo-300 md:text-base md:leading-6 sm:text-sm sm:leading-6'
 					placeholder='Today was sunny... I love sun days.'
 					value={fact?.content}
 					onChange={(e) => {
