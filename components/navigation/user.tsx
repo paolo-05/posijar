@@ -2,12 +2,13 @@ import { useDropdown, useSignOut } from '@/hooks';
 import { Session } from 'next-auth';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FC } from 'react';
 
-type UserProps = {
+interface UserProps {
 	session: Session | null;
-};
+}
 
-export const User = ({ session }: UserProps) => {
+export const User: FC<UserProps> = ({ session }) => {
 	const { isMenuOpen, toggleDropdown } = useDropdown();
 	const { handleLogout } = useSignOut();
 

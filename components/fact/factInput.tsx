@@ -1,14 +1,14 @@
 import { FactType } from '@/types/factType';
-import { MouseEventHandler } from 'react';
+import { FC, MouseEventHandler } from 'react';
 
-type FactInputProps = {
+interface FactInputProps {
 	fact: FactType;
 	updateContent: Function;
 	handleSubmit: MouseEventHandler<HTMLButtonElement>;
 	loading: boolean;
-};
+}
 
-export const FactInput = ({ fact, updateContent, handleSubmit, loading }: FactInputProps) => {
+export const FactInput: FC<FactInputProps> = ({ fact, updateContent, handleSubmit, loading }) => {
 	return (
 		<>
 			<p className='text-center text-xl text-gray-600 dark:text-gray-300'>

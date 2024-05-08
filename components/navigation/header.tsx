@@ -3,15 +3,16 @@ import { Session } from 'next-auth';
 import Image from 'next/image';
 import Link from 'next/link';
 import { User } from '.';
+import { FC } from 'react';
 
-type HeaderProps = {
+interface HeaderProps {
 	session: Session | null;
-};
+}
 
-export const Header = ({ session }: HeaderProps) => {
+export const Header: FC<HeaderProps> = ({ session }) => {
 	const links = [
 		{ href: '/positive-today', label: "Today's Positive Fact" },
-		{ href: '/all-facts', label: 'My PosiJar' },
+		{ href: '/my-jar', label: 'My PosiJar' },
 		{ href: 'https://www.buymeacoffee.com/paolobianchessi', label: 'Support Us' },
 	];
 

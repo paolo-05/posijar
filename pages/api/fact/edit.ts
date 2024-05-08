@@ -6,18 +6,21 @@ import { getServerSession } from 'next-auth/next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	if (req.method !== 'POST') {
-		return res.status(405);
+		res.status(405).end();
+		return;
 	}
 	const session = await getServerSession(req, res, authOptions);
 
 	if (!session) {
-		return res.status(401).json({ message: 'Unauthorized' });
+		res.status(401).end();
+		return;
 	}
 
 	const { fact }: { fact: FactType | undefined } = req.body;
 
 	if (!fact) {
-		return res.status(401).json({ message: 'Missing arguments' });
+		res.status(401).end();
+		return;
 	}
 
 	try {
@@ -25,8 +28,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 		res.status(200).json({ message: 'OK' });
 	} catch (e) {
-		console.error(e);
-
-		res.status(500).json({ error: 'Error in server.' });
+		res.status(500).end();
 	}
 }

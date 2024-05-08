@@ -1,8 +1,10 @@
-type JarProps = {
-	offset: number;
-};
+import { FC } from 'react';
 
-export const Jar = ({ offset }: JarProps) => {
+interface JarProps {
+	offset: number;
+}
+
+export const Jar: FC<JarProps> = ({ offset }) => {
 	return (
 		<>
 			<svg width='300' height='441' viewBox='0 0 300 441' fill='none' xmlns='http://www.w3.org/2000/svg'>
