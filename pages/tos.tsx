@@ -26,7 +26,7 @@ export default function Tos() {
 							</div>
 							<div className='mt-8 text-gray-700 dark:text-gray-300'>
 								<h3 className='text-xl font-semibold text-gray-700 dark:text-white'>Welcome to PosiJar!</h3>
-								<p className='mt-2 text-gray-500'>
+								<p className='mt-2 text-gray-500 dark:text-gray-400 italic'>
 									By accessing this website, you agree to comply with and be bound by the following terms and conditions
 									of use. If you disagree with any part of these terms, please do not use our website.
 								</p>

@@ -42,13 +42,12 @@ export const User = ({ session }: UserProps) => {
 				<div
 					className={`${
 						!isMenuOpen && 'hidden'
-					} absolute z-50 mt-4 w-56 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 dark:bg-gray-800`}
+					} absolute z-50 mt-4 w-32 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 dark:bg-gray-800`}
 				>
 					<div className='py-1'>
 						<Link href='/user/profile'>
 							<p className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 truncate hover:bg-gray-200 dark:hover:bg-gray-700'>
-								Email: <br />
-								{user?.email}
+								Profile
 							</p>
 						</Link>
 					</div>

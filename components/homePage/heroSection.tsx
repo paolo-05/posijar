@@ -12,7 +12,7 @@ export const HeroSection = () => {
 			<Container>
 				<div className='relative pt-36 ml-auto'>
 					<div className='lg:w-2/3 text-center mx-auto'>
-						<HeroAlert content='Restyle of the PosiToday page' />
+						{/* <HeroAlert content='Restyle of the PosiToday page' /> */}
 						<h1 className='text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl'>
 							This year, each day write down a <span className='text-primary dark:text-white'>positive</span> fact.
 						</h1>
