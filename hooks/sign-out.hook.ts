@@ -1,7 +1,8 @@
 import { signOut } from 'next-auth/react';
 
 /**
- * A simple hook for handling the `sign out` action
+ * Custom hook for handling user sign out.
+ * @returns An object containing the `handleLogout` function.
  */
 export const useSignOut = () => {
 	const handleLogout = () => {

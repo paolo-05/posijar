@@ -1,3 +1,4 @@
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { getServerSession } from 'next-auth/next';
 import { getProviders, signIn } from 'next-auth/react';
@@ -5,7 +6,6 @@ import { Urbanist } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { authOptions } from '../api/auth/[...nextauth]';
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
@@ -80,7 +80,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 	// Note: Make sure not to redirect to the same page
 	// To avoid an infinite loop!
 	if (session) {
-		return { redirect: { destination: '/' } };
+		return { redirect: { destination: '/my-jar' } };
 	}
 
 	const providers = await getProviders();

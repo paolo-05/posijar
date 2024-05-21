@@ -1,14 +1,15 @@
 import { useDropdown, useRandomPhrase } from '@/hooks';
 import { FactType } from '@/types/factType';
 import Link from 'next/link';
+import { FC } from 'react';
 
-type FactDisplayProps = {
+interface FactDisplayProps {
 	fact: FactType;
 	setEditFact: Function;
 	setDeleteFact: Function;
-};
+}
 
-export const FactDisplay = ({ fact, setEditFact, setDeleteFact }: FactDisplayProps) => {
+export const FactDisplay: FC<FactDisplayProps> = ({ fact, setEditFact, setDeleteFact }) => {
 	const { isMenuOpen, toggleDropdown, setIsMenuOpen } = useDropdown();
 
 	const { randomPhrase } = useRandomPhrase();
@@ -69,7 +70,7 @@ export const FactDisplay = ({ fact, setEditFact, setDeleteFact }: FactDisplayPro
 			<div className='text-center text-md text-gray-600 dark:text-gray-300 mt-1'>Or, </div>
 			<div className='flex justify-center'>
 				<Link
-					href='/all-facts'
+					href='/my-jar'
 					className='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-info before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max'
 				>
 					<span className='relative text-base font-semibold text-white'>See you Jar status</span>

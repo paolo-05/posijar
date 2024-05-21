@@ -1,15 +1,16 @@
-import { Jar } from '@/components/jar/jar';
+import { Jar } from '@/components/jar/jarSvg';
 import { Container } from '@/components/ui';
 import Link from 'next/link';
+import { FC } from 'react';
 
-type MyPosiJarProps = {
+interface MyPosiJarProps {
 	count: number;
-};
+}
 
-export default function MyPosiJar({ count }: MyPosiJarProps) {
+export const MyJar: FC<MyPosiJarProps> = ({ count }) => {
 	return (
 		<Container>
-			<div className='flex flex-col lg:flex-row justify-center items-center lg:h-screen'>
+			<div className='flex flex-col lg:flex-row justify-center items-center pt-40'>
 				<div className='flex-shrink-0 p-4 lg:w-1/2'>
 					<Jar offset={1 - count / 365} />
 				</div>
@@ -35,4 +36,4 @@ export default function MyPosiJar({ count }: MyPosiJarProps) {
 			</div>
 		</Container>
 	);
-}
+};

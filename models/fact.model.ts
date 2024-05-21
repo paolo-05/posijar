@@ -57,4 +57,17 @@ export const Fact = {
 			db.release();
 		}
 	},
+	getWeekFacts: async (usedId: number, weekStart: Date, weekEnd: Date): Promise<FactType[] | undefined> => {
+		const db = await pool.connect();
+		try {
+			const result = await db.query('SELECT * FROM facts WHERE created_at::date BETWEEN $1 AND $2 AND userId = $3', [
+				weekStart.toISOString(),
+				weekEnd.toISOString(),
+				usedId,
+			]);
+			return result.rows as any | FactType[] | undefined;
+		} finally {
+			db.release();
+		}
+	},
 };
