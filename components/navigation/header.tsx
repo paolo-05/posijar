@@ -11,8 +11,8 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = ({ session }) => {
 	const links = [
-		{ href: '/positive-today', label: "Today's Positive Fact" },
-		{ href: '/my-jar', label: 'My PosiJar' },
+		{ href: session ? '/positive-today' : '/auth/signin', label: "Today's Positive Fact" },
+		{ href: session ? '/my-jar' : '/auth/signin', label: 'My PosiJar' },
 		{ href: 'https://www.buymeacoffee.com/paolobianchessi', label: 'Support Us' },
 	];
 

@@ -20,21 +20,21 @@ export default function Document() {
 					content='PosiJar is a platform to capture and celebrate daily moments of positivity. Join us to create your digital jar of happiness!'
 				/>
 				<meta name='keywords' content='positivity, happiness, gratitude, mindfulness, journaling' />
-				<link rel='canonical' href='https://posijar.vercel.app' />
+				<link rel='canonical' href='https://posijar.com' />
 				<meta property='og:title' content='PosiJar - Capture and Celebrate Positivity' />
 				<meta
 					property='og:description'
 					content='PosiJar is a platform to capture and celebrate daily moments of positivity. Join us to create your digital jar of happiness!'
 				/>
-				<meta property='og:image' content='https://posijar.vercel.app/logo.svg' />
-				<meta property='og:url' content='https://posijar.vercel.app' />
-				<meta name='twitter:card' content='https://posijar.vercel.app/preview.png' />
+				<meta property='og:image' content='https://posijar.com/logo.svg' />
+				<meta property='og:url' content='https://posijar.com' />
+				<meta name='twitter:card' content='https://posijar.com/preview.png' />
 				<meta name='twitter:title' content='PosiJar - Capture and Celebrate Positivity' />
 				<meta
 					name='twitter:description'
 					content='PosiJar is a platform to capture and celebrate daily moments of positivity. Join us to create your digital jar of happiness!'
 				/>
-				<meta name='twitter:image' content='https://posijar.vercel.app/preview.png' />
+				<meta name='twitter:image' content='https://posijar.com/preview.png' />
 			</Head>
 			<body className='bg-white dark:bg-gray-900'>
 				<Main />

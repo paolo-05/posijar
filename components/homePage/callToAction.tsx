@@ -1,8 +1,13 @@
 import { Container } from '@/components/ui';
-import Image from 'next/image';
+import { Session } from 'next-auth';
 import Link from 'next/link';
+import { UserImages } from './userImages';
 
-export const CallToAction = () => {
+interface CallToActionProps {
+	session: Session | null;
+}
+
+export const CallToAction: React.FC<CallToActionProps> = ({ session }) => {
 	return (
 		<div className='relative py-16'>
 			<div
@@ -15,46 +20,7 @@ export const CallToAction = () => {
 			<Container>
 				<div className='relative'>
 					<div className='flex items-center justify-center -space-x-2'>
-						<Image
-							loading='lazy'
-							width='400'
-							height='400'
-							src='https://cdn.discordapp.com/embed/avatars/1.png'
-							alt='member photo'
-							className='h-8 w-8 rounded-full object-cover'
-						/>
-						<Image
-							loading='lazy'
-							width='200'
-							height='200'
-							src='https://cdn.discordapp.com/embed/avatars/2.png'
-							alt='member photo'
-							className='h-12 w-12 rounded-full object-cover'
-						/>
-						<Image
-							loading='lazy'
-							width='200'
-							height='200'
-							src='https://cdn.discordapp.com/embed/avatars/3.png'
-							alt='member photo'
-							className='z-10 h-16 w-16 rounded-full object-cover'
-						/>
-						<Image
-							loading='lazy'
-							width='200'
-							height='200'
-							src='https://cdn.discordapp.com/embed/avatars/4.png'
-							alt='member photo'
-							className='relative h-12 w-12 rounded-full object-cover'
-						/>
-						<Image
-							loading='lazy'
-							width='200'
-							height='200'
-							src='https://cdn.discordapp.com/embed/avatars/0.png'
-							alt='member photo'
-							className='h-8 w-8 rounded-full object-cover'
-						/>
+						<UserImages />
 					</div>
 					<div className='mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12'>
 						<h1 className='text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl'>
@@ -65,7 +31,7 @@ export const CallToAction = () => {
 						</p>
 						<div className='flex flex-wrap justify-center gap-6'>
 							<Link
-								href='/positive-today'
+								href={session ? '/positive-today' : '/auth/signin'}
 								className='relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max'
 							>
 								<span className='relative text-base font-semibold text-white dark:text-dark'>Get Started</span>

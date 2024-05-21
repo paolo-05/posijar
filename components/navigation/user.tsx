@@ -1,4 +1,4 @@
-import { useDropdown, useSignOut } from '@/hooks';
+import { useDropdown, useSignIn, useSignOut } from '@/hooks';
 import { Session } from 'next-auth';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,17 +10,18 @@ interface UserProps {
 
 export const User: FC<UserProps> = ({ session }) => {
 	const { isMenuOpen, toggleDropdown } = useDropdown();
+	const { handleSignIn } = useSignIn();
 	const { handleLogout } = useSignOut();
 
 	if (!session) {
 		return (
 			<div className='mt-12 lg:mt-0'>
-				<Link
-					href='/positive-today'
+				<button
+					onClick={handleSignIn}
 					className='relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max'
 				>
 					<span className='relative text-sm font-semibold text-white'>Get Started</span>
-				</Link>
+				</button>
 			</div>
 		);
 	} else {

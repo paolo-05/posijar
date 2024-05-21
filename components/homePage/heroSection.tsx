@@ -1,8 +1,13 @@
 import { Container } from '@/components/ui';
 import Link from 'next/link';
 import { HeroAlert } from '.';
+import { Session } from 'next-auth';
 
-export const HeroSection = () => {
+interface HeroSectionProps {
+	session: Session | null;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ session }) => {
 	return (
 		<div className='relative'>
 			<div aria-hidden='true' className='absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20'>
@@ -12,7 +17,10 @@ export const HeroSection = () => {
 			<Container>
 				<div className='relative pt-36 ml-auto'>
 					<div className='lg:w-2/3 text-center mx-auto'>
-						{/* <HeroAlert content='Restyle of the PosiToday page' /> */}
+						<HeroAlert
+							content='Addded a past week recap section in the My Jar page.'
+							href={session ? '/my-jar' : '/auth/signin'}
+						/>
 						<h1 className='text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl'>
 							This year, each day write down a <span className='text-primary dark:text-white'>positive</span> fact.
 						</h1>
@@ -22,7 +30,7 @@ export const HeroSection = () => {
 						</p>
 						<div className='mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6'>
 							<Link
-								href='/positive-today'
+								href={session ? '/positive-today' : '/auth/signin'}
 								className='relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max'
 							>
 								<span className='relative text-base font-semibold text-white'>Get started</span>
