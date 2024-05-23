@@ -65,6 +65,17 @@ export default function SignIn({}: InferGetServerSidePropsType<typeof getServerS
 									</button>
 								</div>{' '}
 							</div>
+							<span className='flex items-center gap-10 justify-center text-gray-600 dark:text-white p-1'>
+								<Link href='/tos' className='font-medium hover:text-primary'>
+									Terms of Use
+								</Link>
+								<Link href='/privacy' className='font-medium hover:text-primary'>
+									Privacy Policy
+								</Link>
+								<Link href='mailto:paolo.bianchessi@icloud.com' className='font-semibold hover:text-primary'>
+									Contact Us
+								</Link>
+							</span>
 						</div>
 					</div>
 				</section>
