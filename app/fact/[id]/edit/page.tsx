@@ -4,28 +4,31 @@ import { getFactById } from '@/lib/data';
 import { redirect } from 'next/navigation';
 
 export const metadata = {
-  title: 'Edit Your PosiFact',
+	title: 'Edit Your PosiFact',
+	alternates: {
+		canonical: '/fact/edit',
+	},
 };
 
 interface Props {
-  params: {
-    id: string;
-  };
+	params: {
+		id: string;
+	};
 }
 
 export default async function FactEditPage({ params }: Props) {
-  const session = await auth();
+	const session = await auth();
 
-  if (!session) {
-    return redirect('/auth/signin');
-  }
+	if (!session) {
+		return redirect('/auth/signin');
+	}
 
-  const userId = parseInt(session.user?.id || '');
-  const fact = await getFactById(params.id);
+	const userId = parseInt(session.user?.id || '');
+	const fact = await getFactById(params.id);
 
-  if (!fact) {
-    redirect('/fact/create');
-  }
+	if (!fact) {
+		redirect('/fact/create');
+	}
 
-  return <EditFactForm fact={fact} userId={userId} />;
+	return <EditFactForm fact={fact} userId={userId} />;
 }

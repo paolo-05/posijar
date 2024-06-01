@@ -3,15 +3,18 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'MyPosiJar',
+	title: 'MyPosiJar',
+	alternates: {
+		canonical: '/my-jar',
+	},
 };
 
 export default async function MyJarPage() {
-  return (
-    <main className="flex-1">
-      <Suspense fallback={<JarSkeleton />}>
-        <MyJar />
-      </Suspense>
-    </main>
-  );
+	return (
+		<main className='flex-1'>
+			<Suspense fallback={<JarSkeleton />}>
+				<MyJar />
+			</Suspense>
+		</main>
+	);
 }
