@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		images: [
 			{
-				url: 'https://posijar.com/og.png', // Must be an absolute URL
+				url: 'https://posijar.com/og.png',
 				width: 800,
 				height: 600,
 			},

@@ -1,2 +1,1 @@
-export type SvgProps = React.JSX.IntrinsicAttributes &
-  React.SVGProps<SVGSVGElement>;
+export type SvgProps = React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>;

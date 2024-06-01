@@ -1,7 +1,8 @@
+import { BlurredBackground } from '@/components/theme';
 import { Container } from '@/components/ui';
-import Link from 'next/link';
-import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
 	title: 'Not Found',
@@ -10,13 +11,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
 	return (
 		<main className='flex min-h-screen items-center justify-center'>
-			<div
-				aria-hidden='true'
-				className='absolute inset-0 m-auto grid h-max w-full grid-cols-2 -space-x-52 opacity-40 dark:opacity-20'
-			>
-				<div className='h-56 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700'></div>
-				<div className='h-32 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600'></div>
-			</div>
+			<BlurredBackground />
 			<Container>
 				<div className='relative'>
 					<div className='m-auto mt-6 space-y-6 md:w-8/12 lg:w-7/12'>

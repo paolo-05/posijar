@@ -1,6 +1,6 @@
 import { Container } from '@/components/ui';
 import Link from 'next/link';
-import { GithubIcon, InstagramIcon, TwitterIcon } from '../svg';
+import { GithubIcon, InstagramIcon, TwitterIcon } from '@/components/svg';
 import { YearCopiright } from './yearCopiright';
 
 export const Footer = () => {

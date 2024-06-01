@@ -1,20 +1,15 @@
 import { auth } from '@/auth';
+import { UserImages } from '@/components/homepage/userImages';
+import { BlurredBackground } from '@/components/theme';
 import { Container } from '@/components/ui';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { UserImages } from './userImages';
+import Link from 'next/link';
 
 export const CallToAction: React.FC = async () => {
 	const session = await auth();
 	return (
 		<div className='relative py-16'>
-			<div
-				aria-hidden='true'
-				className='absolute inset-0 m-auto grid h-max w-full grid-cols-2 -space-x-52 opacity-40 dark:opacity-20'
-			>
-				<div className='h-56 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700'></div>
-				<div className='h-32 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600'></div>
-			</div>
+			<BlurredBackground />
 			<Container>
 				<div className='relative'>
 					<div className='flex items-center justify-center -space-x-2'>

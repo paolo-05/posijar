@@ -3,7 +3,7 @@ import { getRandomPhrase, getTodayFact } from '@/lib/data';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { FactDropdown } from './dropdown';
 
 export const ViewFact = async () => {

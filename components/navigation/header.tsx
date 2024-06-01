@@ -2,8 +2,8 @@ import { auth } from '@/auth';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
-import { ModeToggle } from '../theme';
-import { Container } from '../ui';
+import { ModeToggle } from '@/components/theme';
+import { Container } from '@/components/ui';
 import { NavLinks, User } from './';
 
 export const Header: FC = async () => {

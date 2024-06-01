@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function MyJarPage() {
+export default function MyJarPage() {
 	return (
 		<main className='flex-1'>
 			<Suspense fallback={<JarSkeleton />}>
