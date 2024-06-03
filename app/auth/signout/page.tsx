@@ -1,8 +1,7 @@
-import { auth, signOut } from '@/auth';
+import { signOut } from '@/auth';
 import { BlurredBackground } from '@/components/theme';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { redirect } from 'next/navigation';
 
 export const metadata = {
 	title: 'Sign Out',
@@ -11,13 +10,7 @@ export const metadata = {
 	},
 };
 
-export default async function SignOutPage() {
-	const session = await auth();
-
-	if (!session) {
-		redirect('/auth/signin');
-	}
-
+export default function SignOutPage() {
 	return (
 		<main className='flex min-h-screen items-center justify-center'>
 			<BlurredBackground />

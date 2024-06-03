@@ -5,8 +5,7 @@ import { Container } from '@/components/ui';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export const CallToAction: React.FC = async () => {
-	const session = await auth();
+export const CallToAction: React.FC = () => {
 	return (
 		<div className='relative py-16'>
 			<BlurredBackground />
@@ -24,7 +23,7 @@ export const CallToAction: React.FC = async () => {
 						</p>
 						<div className='flex flex-wrap justify-center gap-6'>
 							<Button className='h-14 rounded-full bg-primary text-base font-semibold text-white hover:bg-primary/80'>
-								<Link aria-label='Get Started' href={session?.user ? '/fact' : '/auth/signin'}>
+								<Link aria-label='Get Started' href='/auth/signin'>
 									Get started
 								</Link>
 							</Button>

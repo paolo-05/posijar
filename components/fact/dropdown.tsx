@@ -50,11 +50,11 @@ export const FactDropdown: FC<FactDropdownProps> = ({ userId, factId }) => {
 					<DropdownMenuLabel>Actions</DropdownMenuLabel>
 					<DropdownMenuSeparator />
 					<DropdownMenuItem>
-						<Link aria-label='Edit Fact' href={`/fact/${factId}/edit`} className='w-full h-full'>
+						<Link aria-label='Edit Fact' href={`/dashboard/fact/${factId}/edit`} className='h-full w-full'>
 							Edit
 						</Link>
 					</DropdownMenuItem>
-					<DialogTrigger className='w-full h-full text-red-700'>
+					<DialogTrigger className='h-full w-full text-red-700'>
 						<DropdownMenuItem>Delete</DropdownMenuItem>
 					</DialogTrigger>
 				</DropdownMenuContent>

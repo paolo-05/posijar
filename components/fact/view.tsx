@@ -1,10 +1,10 @@
 import { auth } from '@/auth';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getRandomPhrase, getTodayFact } from '@/lib/data';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { FactDropdown } from './dropdown';
+import { FactDropdown } from '.';
 
 export const ViewFact = async () => {
 	const session = await auth();
@@ -18,7 +18,7 @@ export const ViewFact = async () => {
 	const randomPhrase = await getRandomPhrase();
 
 	if (!fact) {
-		redirect('/fact/create');
+		redirect('/dashboard/fact/create');
 	}
 
 	return (

@@ -1,11 +1,9 @@
 import { Container } from '@/components/ui';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { HeroAlert } from '.';
-import { Button } from '@/components/ui/button';
-import { auth } from '@/auth';
 
-export const HeroSection: React.FC = async () => {
-	const session = await auth();
+export const HeroSection: React.FC = () => {
 	return (
 		<div className='relative'>
 			<div aria-hidden='true' className='absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20'>
@@ -15,10 +13,7 @@ export const HeroSection: React.FC = async () => {
 			<Container>
 				<div className='relative ml-auto pt-36'>
 					<div className='mx-auto text-center lg:w-2/3'>
-						<HeroAlert
-							content='Get started now and write down your first positive fact.'
-							href={session?.user ? '/fact/create' : '/auth/signin'}
-						/>
+						<HeroAlert content='Get started now and write down your first positive fact.' href='/auth/signin' />
 						<h1 className='text-5xl font-bold text-gray-900 dark:text-white md:text-6xl xl:text-7xl'>
 							This year, each day write down a <span className='text-primary dark:text-white'>positive</span> fact.
 						</h1>
@@ -28,7 +23,7 @@ export const HeroSection: React.FC = async () => {
 						</p>
 						<div className='mt-16 flex flex-wrap justify-center gap-x-6 gap-y-4'>
 							<Button className='h-14 rounded-full bg-primary text-base font-semibold text-white hover:bg-primary/80'>
-								<Link aria-label='Get Started' href={session?.user ? '/fact' : '/auth/signin'}>
+								<Link aria-label='Get Started' href='/auth/signin'>
 									Get started
 								</Link>
 							</Button>
@@ -39,9 +34,21 @@ export const HeroSection: React.FC = async () => {
 								<Link aria-label='Learn More About PosiJar' href='#features'>
 									Learn More
 								</Link>
+								<svg
+									className='-mr-1 ml-2 h-5 w-5'
+									fill='currentColor'
+									viewBox='0 0 20 20'
+									xmlns='http://www.w3.org/2000/svg'
+								>
+									<path
+										fillRule='evenodd'
+										d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+										clipRule='evenodd'
+									></path>
+								</svg>
 							</Button>
 						</div>
-						<div className='mt-16 hidden justify-between border-y border-gray-100 py-8 dark:border-gray-800 sm:flex'>
+						<div className='mt-16 hidden justify-between gap-2 border-y border-gray-100 py-8 dark:border-gray-800 sm:flex'>
 							<div className='text-left'>
 								<h6 className='text-lg font-semibold text-gray-700 dark:text-white'>The best experience</h6>
 								<p className='mt-2 text-gray-500'>Write down your positive facts in your browser!</p>

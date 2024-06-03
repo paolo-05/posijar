@@ -1,4 +1,3 @@
-import { auth } from '@/auth';
 import { Container } from '@/components/ui';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,9 +28,7 @@ const features = [
 	},
 ];
 
-export const Features = async () => {
-	const session = await auth();
-
+export const Features = () => {
 	return (
 		<div id='features'>
 			<Container>
@@ -70,7 +67,7 @@ export const Features = async () => {
 								<p className='text-gray-600 dark:text-gray-300'>{feature.description}</p>
 								<Link
 									aria-label='Get started'
-									href={session?.user ? '/fact' : '/auth/signin'}
+									href='/auth/signin'
 									className='flex items-center justify-between group-hover:text-brandSecondary'
 								>
 									<span className='text-sm'>Get started</span>

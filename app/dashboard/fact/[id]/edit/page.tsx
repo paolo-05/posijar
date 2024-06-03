@@ -1,7 +1,7 @@
 import { auth } from '@/auth';
 import { EditFactForm } from '@/components/fact';
 import { getFactById } from '@/lib/data';
-import { redirect } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
 export const metadata = {
 	title: 'Edit Your PosiFact',
@@ -27,7 +27,7 @@ export default async function FactEditPage({ params }: Props) {
 	const fact = await getFactById(params.id);
 
 	if (!fact) {
-		redirect('/fact/create');
+		notFound();
 	}
 
 	return <EditFactForm fact={fact} userId={userId} />;
