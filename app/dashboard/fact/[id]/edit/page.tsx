@@ -6,7 +6,7 @@ import { notFound, redirect } from 'next/navigation';
 export const metadata = {
 	title: 'Edit Your PosiFact',
 	alternates: {
-		canonical: '/fact/edit',
+		canonical: '/dashboard/fact/[id]/edit',
 	},
 };
 

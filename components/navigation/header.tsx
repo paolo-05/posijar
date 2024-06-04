@@ -31,13 +31,7 @@ export const Header: FC = () => {
 								</div>
 
 								<div className='relative flex max-h-10 items-center lg:hidden'>
-									<label
-										role='menubar'
-										htmlFor='toggle_nav'
-										aria-label='humburger'
-										id='hamburger'
-										className='relative -mr-6 p-6'
-									>
+									<label htmlFor='toggle_nav' aria-label='humburger' id='hamburger' className='relative -mr-6 p-6'>
 										<div
 											aria-hidden='true'
 											id='line'
@@ -63,7 +57,7 @@ export const Header: FC = () => {
 								</ul>
 							</div>
 							<div className='mt-12 lg:mt-0'>
-								<Button className='h-12 rounded-full bg-primary text-base font-semibold text-white hover:bg-primary/80'>
+								<Button size='lg'>
 									<Link aria-label='Get Started' href={'/auth/signin'}>
 										Get started
 									</Link>

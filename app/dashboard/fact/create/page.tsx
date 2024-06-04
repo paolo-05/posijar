@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 export const metadata = {
 	title: 'Create Your PosiFact',
 	alternates: {
-		canonical: '/fact/create',
+		canonical: '/dashboard/fact/create',
 	},
 };
 

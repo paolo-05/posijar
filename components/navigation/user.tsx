@@ -43,11 +43,15 @@ export const User: FC = async () => {
 				<DropdownMenuLabel>My Account</DropdownMenuLabel>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem>
-					<Link aria-label='User Profile Page' href={'/user/profile'} className='h-full w-full'>
+					<Link aria-label='User Profile Page' href='/dashboard/user/profile' className='h-full w-full'>
 						Profile
 					</Link>
 				</DropdownMenuItem>
-				<DropdownMenuItem>Support</DropdownMenuItem>
+				<DropdownMenuItem asChild>
+					<Link aria-label='Contact Support' href='mailto:paolo.bianchessi@icloud.com'>
+						Support
+					</Link>
+				</DropdownMenuItem>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem className='text-red-700'>
 					<Link aria-label='Sign Out' href={'/auth/signout'} className='h-full w-full'>

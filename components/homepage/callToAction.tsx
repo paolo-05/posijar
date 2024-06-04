@@ -1,4 +1,3 @@
-import { auth } from '@/auth';
 import { UserImages } from '@/components/homepage/userImages';
 import { BlurredBackground } from '@/components/theme';
 import { Container } from '@/components/ui';
@@ -22,15 +21,12 @@ export const CallToAction: React.FC = () => {
 							Join other peoples that have already started this journey to a more positive year.
 						</p>
 						<div className='flex flex-wrap justify-center gap-6'>
-							<Button className='h-14 rounded-full bg-primary text-base font-semibold text-white hover:bg-primary/80'>
+							<Button size='lg'>
 								<Link aria-label='Get Started' href='/auth/signin'>
 									Get started
 								</Link>
 							</Button>
-							<Button
-								variant='outline'
-								className='h-14 rounded-full text-base font-semibold text-primary dark:text-white'
-							>
+							<Button size='lg' variant='outline'>
 								<Link aria-label='Learn More About PosiJar' href='/about'>
 									More About
 								</Link>

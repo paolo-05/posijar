@@ -13,7 +13,7 @@ export const HeroSection: React.FC = () => {
 			<Container>
 				<div className='relative ml-auto pt-36'>
 					<div className='mx-auto text-center lg:w-2/3'>
-						<HeroAlert content='Get started now and write down your first positive fact.' href='/auth/signin' />
+						<HeroAlert content='New look for some pages, including the MyJar and PosiFact pages.' href='/auth/signin' />
 						<h1 className='text-5xl font-bold text-gray-900 dark:text-white md:text-6xl xl:text-7xl'>
 							This year, each day write down a <span className='text-primary dark:text-white'>positive</span> fact.
 						</h1>
@@ -22,15 +22,12 @@ export const HeroSection: React.FC = () => {
 							memories will eventualy come back.
 						</p>
 						<div className='mt-16 flex flex-wrap justify-center gap-x-6 gap-y-4'>
-							<Button className='h-14 rounded-full bg-primary text-base font-semibold text-white hover:bg-primary/80'>
+							<Button size='lg'>
 								<Link aria-label='Get Started' href='/auth/signin'>
 									Get started
 								</Link>
 							</Button>
-							<Button
-								variant='outline'
-								className='h-14 rounded-full text-base font-semibold text-primary dark:text-white'
-							>
+							<Button variant='outline' size='lg'>
 								<Link aria-label='Learn More About PosiJar' href='#features'>
 									Learn More
 								</Link>

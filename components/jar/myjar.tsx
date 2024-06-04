@@ -38,7 +38,7 @@ export const MyJar: FC = async () => {
 							<div className='text-md mb-4 text-gray-900 dark:text-gray-100'>
 								<p>Total Facts: {count}</p>
 							</div>
-							<Button asChild>
+							<Button size='lg'>
 								<Link href='/dashboard'>Add a PosiFact</Link>
 							</Button>
 						</div>
