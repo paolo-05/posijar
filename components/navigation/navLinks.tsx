@@ -1,28 +1,17 @@
+import { TOP_NAVBAR_LINKS } from '@/lib/contants';
 import Link from 'next/link';
 import { FC } from 'react';
 
 export const NavLinks: FC = () => {
-	const links = [
-		{
-			href: '/auth/signin',
-			label: "Today's Positive Fact",
-		},
-		{ href: '/auth/signin', label: 'My PosiJar' },
-		{
-			href: 'https://www.buymeacoffee.com/paolobianchessi',
-			label: 'Support Us',
-		},
-	];
-
-	return links.map(({ href, label }, index) => (
-		<li key={label}>
+	return TOP_NAVBAR_LINKS.map((link, index) => (
+		<li key={index}>
 			<Link
-				aria-label={label}
-				href={href}
+				aria-label={link.label}
+				href={link.href}
 				className='block transition hover:text-primary md:px-4'
-				target={index === links.length - 1 ? '_blank' : '_self'}
+				target={index === TOP_NAVBAR_LINKS.length - 1 ? '_blank' : '_self'}
 			>
-				<span>{label}</span>
+				<span>{link.label}</span>
 			</Link>
 		</li>
 	));
