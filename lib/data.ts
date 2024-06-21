@@ -4,6 +4,7 @@ import type { Fact } from '@/types/factType';
 import { format } from 'date-fns';
 import { unstable_noStore as noStore } from 'next/cache';
 import { pool } from './db-pool';
+import { startOfWeek, endOfWeek } from 'date-fns';
 
 export const getRandomPhrase = async (): Promise<string> => {
 	noStore();
@@ -28,7 +29,7 @@ export const getTodayFact = async (userId: number): Promise<Fact | null> => {
 	const db = await pool.connect();
 	try {
 		const result = await db.query('SELECT * FROM facts WHERE created_at::date = $1 AND userId = $2', [
-			format(new Date(), 'yyyy-MM-dd'),
+			new Date().toISOString().split('T')[0],
 			userId,
 		]);
 		return result.rows[0] as any | Fact | undefined;
@@ -64,15 +65,15 @@ export const getFactsCount = async (userId: number): Promise<number> => {
 	}
 };
 
-export const getWeekFacts = async (userId: number, weekStart: Date, weekEnd: Date): Promise<Fact[]> => {
+export const getWeekFacts = async (userId: number, startOfWeekDate: Date, endOfWeekDate: Date): Promise<Fact[]> => {
 	noStore();
-
+	await new Promise((resolve) => setTimeout(resolve, 3000));
 	const db = await pool.connect();
 
 	try {
 		const res = await db.query('SELECT * FROM facts WHERE created_at::date BETWEEN $1 AND $2 AND userId = $3', [
-			weekStart.toISOString(),
-			weekEnd.toISOString(),
+			startOfWeekDate.toISOString().split('T')[0],
+			endOfWeekDate.toISOString().split('T')[0],
 			userId,
 		]);
 		return res.rows as any | Fact[] | undefined;

@@ -2,11 +2,11 @@ import { auth } from '@/auth';
 import { Jar } from '@/components/jar/jarSvg';
 import { BlurredBackground } from '@/components/theme';
 import { Container } from '@/components/ui';
+import { Button } from '@/components/ui/button';
 import { getFactsCount } from '@/lib/data';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { FC } from 'react';
-import { Button } from '../ui/button';
 
 export const MyJar: FC = async () => {
 	const session = await auth();

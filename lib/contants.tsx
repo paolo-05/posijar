@@ -1,4 +1,4 @@
-// here we declare all the contants, we need a tsx file since some of the variables inclued tsx code.
+// here we declare all the contants, we need a tsx file since some of the variables include tsx code.
 
 import { GithubIcon, InstagramIcon, TwitterIcon } from '@/components/svg';
 import { Sparkles, CalendarHeart, ListStart } from 'lucide-react';

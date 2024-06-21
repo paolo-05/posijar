@@ -1,47 +1,36 @@
-import { LogoIcon } from '@/components/svg';
-import { BlurredBackground } from '@/components/theme';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { DaysGrid, Pagination, WeekRecapSkeleton } from '@/components/weekRecap';
+import { formatDateToLocal } from '@/lib/utils';
+import { endOfWeek, startOfWeek } from 'date-fns';
+import { Suspense } from 'react';
 
 export default async function Page({
 	searchParams,
 }: {
 	searchParams?: {
-		dateStart?: string;
-		dateEnd?: string;
+		date?: string;
 	};
 }) {
-	const dateStart = searchParams?.dateStart || new Date().toISOString();
-	const dateEnd = searchParams?.dateEnd || new Date().toISOString();
+	const date = searchParams?.date ? new Date(searchParams.date) : new Date();
+	const startOfWeekDate = startOfWeek(date, { weekStartsOn: 1 }); // Assuming week starts on Monday (1)
+	const endOfWeekDate = endOfWeek(date, { weekStartsOn: 1 }); // Assuming week starts on Monday (1)
 
 	return (
 		<main className='flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6'>
 			<div className='flex flex-1 items-center justify-center rounded-lg shadow-sm'>
-				<BlurredBackground />
 				<div className='relative flex flex-col items-center'>
-					<LogoIcon className='w-32' />
-					<div className='max-w-md'>
-						<h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>Coming Soon!</h1>
-						<p className='leading-7 [&:not(:first-child)]:mt-6'>
-							We&apos;re working hard to bring you something amazing! Our team is putting the finishing touches on an
-							exciting new experience that we can&apos;t wait to share with you
+					<div className='mb-10 text-center'>
+						<h1 className='my-1 text-4xl font-bold text-gray-800 dark:text-gray-100 md:text-5xl'>Your Week Recap</h1>
+						<p className='text-sm text-muted-foreground'>
+							From {formatDateToLocal(startOfWeekDate.toDateString())} to{' '}
+							{formatDateToLocal(endOfWeekDate.toDateString())}
 						</p>
-						<div className='mt-4 flex flex-wrap justify-center gap-6'>
-							<Button className='h-14 rounded-full bg-primary text-base font-semibold text-white hover:bg-primary/80'>
-								<Link aria-label='Get Started' href='/dashboard'>
-									Go to Dashboard
-								</Link>
-							</Button>
-							<Button
-								variant='outline'
-								className='h-14 rounded-full text-base font-semibold text-primary dark:text-white'
-							>
-								<Link aria-label='Support Us' href='https://www.buymeacoffee.com/paolobianchessi' target='_blank'>
-									Support Us
-								</Link>
-							</Button>
-						</div>
 					</div>
+
+					<Suspense fallback={<WeekRecapSkeleton />}>
+						<DaysGrid startOfWeekDate={startOfWeekDate} endOfWeekDate={endOfWeekDate} />
+					</Suspense>
+
+					<Pagination />
 				</div>
 			</div>
 		</main>
