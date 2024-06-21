@@ -67,7 +67,6 @@ export const getFactsCount = async (userId: number): Promise<number> => {
 
 export const getWeekFacts = async (userId: number, startOfWeekDate: Date, endOfWeekDate: Date): Promise<Fact[]> => {
 	noStore();
-	await new Promise((resolve) => setTimeout(resolve, 3000));
 	const db = await pool.connect();
 
 	try {
