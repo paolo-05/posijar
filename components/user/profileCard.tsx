@@ -1,9 +1,18 @@
-import { auth } from '@/auth';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { FC } from 'react';
+
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
-import { FC } from 'react';
-import { DeleteUserModal } from '.';
+
+import { auth } from '@/auth';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+
+import { DeleteUserModal } from './';
 
 export const ProfileCard: FC = async () => {
 	const session = await auth();
@@ -27,8 +36,12 @@ export const ProfileCard: FC = async () => {
 				</CardTitle>
 			</CardHeader>
 			<CardContent>
-				<div className='my-3 text-gray-600 dark:text-gray-200'>Username: {session?.user?.name || ''}</div>
-				<div className=' text-gray-600 dark:text-gray-200'>Email: {session?.user?.email || ''}</div>
+				<div className='my-3 text-gray-600 dark:text-gray-200'>
+					<span className='font-bold'>Username</span>: {session?.user?.name || ''}
+				</div>
+				<div className=' text-gray-600 dark:text-gray-200'>
+					<span className='font-bold'>Email</span>: {session?.user?.email || ''}
+				</div>
 			</CardContent>
 			<CardFooter>
 				<DeleteUserModal userId={parseInt(session.user?.id || '')} />

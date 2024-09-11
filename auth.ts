@@ -1,9 +1,10 @@
-import { pool } from '@/lib/db-pool';
-import PostgresAdapter from '@auth/pg-adapter';
 import NextAuth from 'next-auth';
 import type { Provider } from 'next-auth/providers';
 import Discord from 'next-auth/providers/discord';
 import Google from 'next-auth/providers/google';
+
+import { pool } from '@/lib/db-pool';
+import PostgresAdapter from '@auth/pg-adapter';
 
 const providers: Provider[] = [
 	Discord({
@@ -32,7 +33,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 	pages: {
 		signIn: '/auth/signin',
 		signOut: '/auth/signout',
+		// newUser: '/dashboard/user/onboarding',
 	},
 });
-
-// await new Promise((resolve) => setTimeout(resolve, 3000));

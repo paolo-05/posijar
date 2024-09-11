@@ -1,7 +1,12 @@
-import { JarSkeleton, MyJar } from '@/components/jar';
-import { BlurredBackground } from '@/components/theme';
-import { Metadata } from 'next';
 import { Suspense } from 'react';
+
+import { Metadata } from 'next';
+
+import {
+  JarSkeleton,
+  MyJar,
+} from '@/components/jar';
+import { BlurredBackground } from '@/components/theme';
 
 export const metadata: Metadata = {
 	title: 'MyPosiJar',
