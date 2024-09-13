@@ -2,16 +2,13 @@ import { Suspense } from 'react';
 
 import { Metadata } from 'next';
 
-import {
-  JarSkeleton,
-  MyJar,
-} from '@/components/jar';
+import { JarSkeleton, MyJar } from '@/components/jar';
 import { BlurredBackground } from '@/components/theme';
 
 export const metadata: Metadata = {
 	title: 'MyPosiJar',
 	alternates: {
-		canonical: '/my-jar',
+		canonical: '/dashboard/my-jar',
 	},
 };
 

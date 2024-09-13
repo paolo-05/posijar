@@ -1,13 +1,14 @@
 // here we declare all the contants, we need a tsx file since some of the variables include tsx code.
 
+import { CalendarHeart, ListStart, Sparkles, Stamp } from 'lucide-react';
+
 import { GithubIcon, InstagramIcon, TwitterIcon } from '@/components/svg';
-import { Sparkles, CalendarHeart, ListStart } from 'lucide-react';
 
 export const DASHBOARD_LINKS = [
 	{
 		label: "Today's PosiFact",
 		href: '/dashboard',
-		icon: <Sparkles className='h-4 w-4' />,
+		icon: <Stamp className='h-4 w-4' />,
 	},
 	{
 		label: 'My Jar',
@@ -18,6 +19,11 @@ export const DASHBOARD_LINKS = [
 		label: 'Week Recap',
 		href: '/dashboard/week-recap',
 		icon: <ListStart className='h-4 w-4' />,
+	},
+	{
+		label: 'PosiAI',
+		href: '/dashboard/posi-ai',
+		icon: <Sparkles className='h-4 w-4' />,
 	},
 ];
 

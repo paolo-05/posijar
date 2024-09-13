@@ -1,10 +1,12 @@
+import Link from 'next/link';
+import { redirect } from 'next/navigation';
+
 import { auth } from '@/auth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getRandomPhrase, getTodayFact } from '@/lib/data';
-import Link from 'next/link';
-import { redirect } from 'next/navigation';
-import { FactDropdown } from '.';
+
+import { FactDropdown } from './';
 
 export const ViewFact = async () => {
 	const session = await auth();
@@ -37,7 +39,7 @@ export const ViewFact = async () => {
 					<p className=' max-w-80'>{randomPhrase + ' '}</p>
 					<p>Or</p>
 					<Button>
-						<Link aria-label='View your Jar' href={'/my-jar'}>
+						<Link aria-label='View your Jar' href={'/dashaboard/my-jar'}>
 							View your Jar
 						</Link>
 					</Button>

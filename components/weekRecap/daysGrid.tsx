@@ -1,9 +1,11 @@
+import { FC } from 'react';
+
+import { redirect } from 'next/navigation';
+
 import { auth } from '@/auth';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getWeekFacts } from '@/lib/data';
 import { formatTimeToLocal } from '@/lib/utils';
-import { redirect } from 'next/navigation';
-import { FC } from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface DaysGridProps {
 	startOfWeekDate: Date;
@@ -34,9 +36,7 @@ export const DaysGrid: FC<DaysGridProps> = async ({ startOfWeekDate, endOfWeekDa
 				return (
 					<Card className='relative h-80 w-52' key={day}>
 						<CardHeader>
-							<CardTitle>
-								<h2>{day}</h2>
-							</CardTitle>
+							<CardTitle>{day}</CardTitle>
 						</CardHeader>
 						<CardContent>{todayFact?.content || 'No fact for this day'}</CardContent>
 						<CardFooter className='absolute bottom-0'>

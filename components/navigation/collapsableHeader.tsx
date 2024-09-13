@@ -1,14 +1,15 @@
 'use client';
 
+import clsx from 'clsx';
+import { Menu } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import { LogoIcon } from '@/components/svg';
 import { ModeToggle } from '@/components/theme';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { DASHBOARD_LINKS } from '@/lib/contants';
-import clsx from 'clsx';
-import { Menu } from 'lucide-react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export const CollapsableHeader = ({
 	children,

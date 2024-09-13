@@ -33,6 +33,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 	pages: {
 		signIn: '/auth/signin',
 		signOut: '/auth/signout',
-		// newUser: '/dashboard/user/onboarding',
+		newUser: '/auth/onboarding',
 	},
 });
