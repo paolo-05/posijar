@@ -3,8 +3,17 @@ import { redirect } from 'next/navigation';
 
 import { auth } from '@/auth';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { getRandomPhrase, getTodayFact } from '@/lib/data';
+import {
+	Card,
+	CardContent,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
+import {
+	getRandomPhrase,
+	getTodayFact,
+} from '@/lib/data';
 
 import { FactDropdown } from './';
 
@@ -39,7 +48,7 @@ export const ViewFact = async () => {
 					<p className=' max-w-80'>{randomPhrase + ' '}</p>
 					<p>Or</p>
 					<Button>
-						<Link aria-label='View your Jar' href={'/dashaboard/my-jar'}>
+						<Link aria-label='View your Jar' href={'/dashboard/my-jar'}>
 							View your Jar
 						</Link>
 					</Button>

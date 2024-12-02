@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 import { Container } from '@/components/ui';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { HeroAlert } from '.';
+
+import { HeroAlert } from './';
 
 export const HeroSection: React.FC = () => {
 	return (
@@ -13,7 +15,7 @@ export const HeroSection: React.FC = () => {
 			<Container>
 				<div className='relative ml-auto pt-36'>
 					<div className='mx-auto text-center lg:w-2/3'>
-						<HeroAlert content='New WeekRecap page, a place to relive all your good memories!' href='/auth/signin' />
+						<HeroAlert content='Working on something BIG for 2025!' href='/' />
 						<h1 className='text-5xl font-bold text-gray-900 dark:text-white md:text-6xl xl:text-7xl'>
 							This year, each day write down a <span className='text-primary dark:text-white'>positive</span> fact.
 						</h1>
