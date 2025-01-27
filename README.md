@@ -1,3 +1,5 @@
+<u><i>This project is no longer being updated.</i></u>
+
 <img src="https://skillicons.dev/icons?i=nextjs,react,discord,ts,tailwind,vercel,postgres" />
 
 # ❓What is `PosiJar`
